@@ -193,6 +193,9 @@ type Marshaller interface {
 
 	SendEmail(body *model.Email, opts ...*Opts) (*model.Email, error)
 	GetAttachmentDir(opts ...*Opts) (*string, error)
+
+	WriteValueManually(body *dto.ManualPointWriteValue, opts ...*Opts) (*dto.ManualPointWriteValueResponse, error)
+	SetModbusCommissioning(body *dto.CommissioningToolRequest, opts ...*Opts) (*dto.CommissioningToolResponse, error)
 }
 
 func New(dbHelper DBHelper) *GRPCMarshaller {
